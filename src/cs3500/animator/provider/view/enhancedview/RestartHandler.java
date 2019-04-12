@@ -1,6 +1,4 @@
 package cs3500.animator.provider.view.enhancedview;
-
-import cs3500.animator.view.enhancedview.EnhancedVisualView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

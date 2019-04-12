@@ -49,6 +49,7 @@ public class ShapeButtonListener implements ActionListener {
     }
 
     for (String sc : v.getController().getModel().getAllShapes().keySet()) {
+      //TODO make sure that this returns an interable datatype of the shape names
       if (sc.equals(name)) {
         JOptionPane.showMessageDialog(window, "Cannot have two shapes with same name");
         canAdd = false;

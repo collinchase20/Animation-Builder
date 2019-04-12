@@ -23,4 +23,6 @@ public interface IController {
   AnimatorModel getModel();
 
   void editKeyframe();
+
+  void addShape(String name, String type);
 }

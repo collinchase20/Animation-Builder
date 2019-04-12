@@ -182,6 +182,16 @@ public class Controller extends JFrame implements IController {
     return this.a;
   }
 
+  @Override
+  public void editKeyframe() {
+    //TODO implement this
+  }
+
+  @Override
+  public void addShape(String name, String type) {
+    a.addShape(name,type);
+  }
+
   private void switchColor(JButton loop) {
     if (this.switchBool) {
       loop.setBackground(Color.green);

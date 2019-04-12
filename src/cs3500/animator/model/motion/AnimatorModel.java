@@ -2,6 +2,7 @@ package cs3500.animator.model.motion;
 
 import java.security.Key;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import cs3500.animator.model.Keyframe;
@@ -178,6 +179,11 @@ public interface AnimatorModel {
    * @return an ArrayList representing an animation
    */
   ArrayList<Keyframe> getKeyframes();
+
+  /**
+   * TODO
+   */
+  HashMap<String,Integer> getAllShapes();
 
 }
 

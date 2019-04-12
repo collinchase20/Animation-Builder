@@ -2,6 +2,7 @@ package cs3500.animator.model.motion;
 
 import java.security.Key;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -330,6 +331,17 @@ public class AnimatorModelImpl implements AnimatorModel {
 
     return arrKeys;
 
+  }
+
+  @Override
+  public HashMap<String, Integer> getAllShapes() {
+    HashMap<String,Integer> temp = new HashMap<>();
+
+    for (Map.Entry<Shape, ArrayList<Motion>> entry : animation.entrySet()) {
+      Shape key = entry.getKey();
+      temp.put(key.getName(), 0);
+    }
+    return temp;
   }
 
   @Override
