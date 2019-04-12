@@ -363,6 +363,8 @@ public class AnimatorModelImpl implements AnimatorModel {
     return String.valueOf(sb);
   }
 
+
+
   @Override
   public int[] returnCanvas() {
     return this.canvas.clone();
@@ -375,7 +377,7 @@ public class AnimatorModelImpl implements AnimatorModel {
   }
 
   @Override
-  public Integer returnHighestTick() {
+  public Integer getLargestTick() {
     int accum = 0;
     for (Map.Entry<Shape, ArrayList<Motion>> entry : animation.entrySet()) {
       ArrayList<Motion> value = entry.getValue();

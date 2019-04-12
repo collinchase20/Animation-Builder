@@ -125,7 +125,7 @@ public interface AnimatorModel {
    * Returns the highest tick from our models hashmap of shapes and motions. Parses every arraylist
    * of motions and returns the number of the highest found tick.
    */
-  Integer returnHighestTick();
+  Integer getLargestTick();
 
   /**
    * Removes the given keyframe from the arrayList of motions.

@@ -61,7 +61,7 @@ public class GraphicView extends JPanel implements IView {
         e.printStackTrace();
       }
       if (loop) {
-        int stop = a.returnHighestTick();
+        int stop = a.getLargestTick();
         if (tick == stop) {
           tick = 0;
         }
