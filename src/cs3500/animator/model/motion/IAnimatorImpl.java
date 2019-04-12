@@ -1,9 +1,11 @@
 package cs3500.animator.model.motion;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import cs3500.animator.model.Keyframe;
 import cs3500.animator.model.shape.Shape;
 import cs3500.animator.util.AnimationBuilder;
 
@@ -18,6 +20,7 @@ public class IAnimatorImpl implements IAnimator {
   // an array of integers to represent the canvas
   // index key: 0=x, 1=y, 2=width, 3=height
   private int[] canvas = new int[4];
+  private ArrayList<Keyframe> arrKeys;
 
 
   public IAnimatorImpl() {
