@@ -11,7 +11,7 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 
 
-import cs3500.animator.model.motion.IAnimator;
+import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.view.IEditor;
 
 /**
@@ -25,7 +25,7 @@ public class Controller extends JFrame implements IController {
   private IEditor eView;
   private JFrame frame = new JFrame();
   private boolean switchBool = true;
-  private IAnimator a;
+  private AnimatorModel a;
 
   /**
    * Constructor for a controller.
@@ -34,7 +34,7 @@ public class Controller extends JFrame implements IController {
    * @param a an Instance of our model
    */
 
-  public Controller(IEditor eView, IAnimator a) {
+  public Controller(IEditor eView, AnimatorModel a) {
     this.eView = eView;
     this.a = a;
   }
@@ -175,6 +175,11 @@ public class Controller extends JFrame implements IController {
 
     frame.pack();
     eView.beginVisual();
+  }
+
+  @Override
+  public AnimatorModel getModel() {
+    return this.a;
   }
 
   private void switchColor(JButton loop) {

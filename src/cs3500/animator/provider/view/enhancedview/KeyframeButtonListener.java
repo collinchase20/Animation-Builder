@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import model.Keyframe;
+import cs3500.animator.model.Keyframe;
 
 /**
  * Listens for when the keyframe is added.

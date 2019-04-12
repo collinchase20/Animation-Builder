@@ -1,6 +1,8 @@
 package cs3500.animator.controller;
 
 
+import cs3500.animator.model.motion.AnimatorModel;
+
 /**
  * Our controller is based around Java Swing's buttons, text fields, and action listeners. If a
  * button is pressed, we either perform the action instantly, or grab the text from it's
@@ -17,4 +19,8 @@ public interface IController {
    *                                   are invalid.
    */
   void beginController() throws IllegalArgumentException;
+
+  AnimatorModel getModel();
+
+  void editKeyframe();
 }

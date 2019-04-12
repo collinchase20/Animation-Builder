@@ -1,9 +1,10 @@
 package cs3500.animator.provider.view.enhancedview;
 
-import controller.Controller;
+import cs3500.animator.controller.Controller;
+import cs3500.animator.model.Keyframe;
 import cs3500.animator.util.AnimationReader;
-import cs3500.animator.view.IView;
-import cs3500.animator.view.VisualPanel;
+import cs3500.animator.provider.view.IView;
+import cs3500.animator.provider.view.VisualPanel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.TextArea;
@@ -27,9 +28,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
-import model.AnimatorModel;
-import model.AnimatorModelImpl;
-import model.Keyframe;
+import cs3500.animator.model.motion.AnimatorModel;
+import cs3500.animator.model.motion.AnimatorModelImpl;
+import cs3500.animator.model.Keyframe;
 
 /**
  * Represents an enhanced visual view that allows for manipulation of the animation playback.

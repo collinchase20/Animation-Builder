@@ -14,7 +14,7 @@ import cs3500.animator.util.AnimationBuilder;
  * array of integers. We represent an animation as a HashMap of shape names, and the motions
  * associated with that shape in an ArrayList associated with the name of the shape.
  */
-public class IAnimatorImpl implements IAnimator {
+public class AnimatorModelImpl implements AnimatorModel {
 
   private Map<Shape, ArrayList<Motion>> animation;
   // an array of integers to represent the canvas
@@ -23,7 +23,7 @@ public class IAnimatorImpl implements IAnimator {
   private ArrayList<Keyframe> arrKeys;
 
 
-  public IAnimatorImpl() {
+  public AnimatorModelImpl() {
     this.animation = new LinkedHashMap<>();
   }
 
@@ -380,30 +380,30 @@ public class IAnimatorImpl implements IAnimator {
    * Our builder class for an IAnimation. We use this in conjunction with the AnimationBuilder to
    * parse text files in order to build our model.
    */
-  public final static class Builder implements AnimationBuilder<IAnimator> {
+  public final static class Builder implements AnimationBuilder<AnimatorModel> {
 
     // required parameters
-    IAnimator a = new IAnimatorImpl();
+    AnimatorModel a = new AnimatorModelImpl();
 
     @Override
-    public IAnimator build() {
+    public AnimatorModel build() {
       return a;
     }
 
     @Override
-    public AnimationBuilder<IAnimator> setBounds(int x, int y, int width, int height) {
+    public AnimationBuilder<AnimatorModel> setBounds(int x, int y, int width, int height) {
       a.setCanvas(x, y, width, height);
       return this;
     }
 
     @Override
-    public AnimationBuilder<IAnimator> declareShape(String name, String type) {
+    public AnimationBuilder<AnimatorModel> declareShape(String name, String type) {
       a.addShape(name, type);
       return this;
     }
 
     @Override
-    public AnimationBuilder<IAnimator> addMotion(String name, int t1, int x1, int y1, int w1,
+    public AnimationBuilder<AnimatorModel> addMotion(String name, int t1, int x1, int y1, int w1,
                                                  int h1, int r1, int g1, int b1, int t2, int x2,
                                                  int y2, int w2, int h2, int r2, int g2, int b2) {
 
@@ -414,7 +414,7 @@ public class IAnimatorImpl implements IAnimator {
 
     // We were told on Piazza that we did not have to implement keyFrame functionality (post @487)
     @Override
-    public AnimationBuilder<IAnimator> addKeyframe(String name, int t, int x, int y, int w, int h,
+    public AnimationBuilder<AnimatorModel> addKeyframe(String name, int t, int x, int y, int w, int h,
                                                    int r, int g, int b) {
       return null;
     }

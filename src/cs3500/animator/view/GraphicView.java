@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import cs3500.animator.model.motion.IAnimator;
+import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.model.shape.Shape;
 
@@ -21,7 +21,7 @@ import cs3500.animator.model.shape.Shape;
  */
 public class GraphicView extends JPanel implements IView {
 
-  private IAnimator a;
+  private AnimatorModel a;
   private int tick = 0;
   private double tickSpeed = 20;
   JPanel jf = new JPanel();
@@ -33,7 +33,7 @@ public class GraphicView extends JPanel implements IView {
    *
    * @param a an instance of our model.
    */
-  GraphicView(IAnimator a) {
+  GraphicView(AnimatorModel a) {
 
     if (a == null) {
       throw new IllegalArgumentException("Model cannot be null");

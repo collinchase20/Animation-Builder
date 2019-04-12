@@ -1,7 +1,7 @@
 import org.junit.Test;
 
-import cs3500.animator.model.motion.IAnimator;
-import cs3500.animator.model.motion.IAnimatorImpl;
+import cs3500.animator.model.motion.AnimatorModel;
+import cs3500.animator.model.motion.AnimatorModelImpl;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.view.IView;
 import cs3500.animator.view.TView;
@@ -15,7 +15,7 @@ public class TViewTest {
 
   @Test
   public void TViewTestMultipleAnimationsAndShapes() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -46,7 +46,7 @@ public class TViewTest {
 
   @Test
   public void removeShapeTest() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -76,7 +76,7 @@ public class TViewTest {
 
   @Test
   public void removeMotionTest() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -109,7 +109,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void removeShapeThatDoesNotExist() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -125,7 +125,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void removeMotionThatDoesNotExist() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -142,7 +142,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void NotInitalizingCanvasBeforeTryingtoDisplayView() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -159,7 +159,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void InvalidShapeTest() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -175,7 +175,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void EndTimeLessThanStartTime() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -190,7 +190,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void PreviousEndTimeGreaterThanCurrentStartTime() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -207,7 +207,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void NegativeTime() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(testModel);
 
@@ -224,7 +224,7 @@ public class TViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void NullModelException() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
 
     IView textualView = new TView(null);
 

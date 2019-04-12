@@ -1,8 +1,10 @@
 package cs3500.animator.model.motion;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.Map;
 
+import cs3500.animator.model.Keyframe;
 import cs3500.animator.model.shape.Shape;
 
 /**
@@ -11,7 +13,7 @@ import cs3500.animator.model.shape.Shape;
  * These methods, aside from the 3 canvas ones, work with that hashmap to create, add, remove, or
  * mutate an animation.
  */
-public interface IAnimator {
+public interface AnimatorModel {
 
   /**
    * This adds a motion to our {@code Map<Shape, ArrayList<Motion>>} based on the name of the shape
@@ -168,6 +170,14 @@ public interface IAnimator {
    *                                  time.
    */
   void modifyKeyFrame(String name, int time, int x, int y, int w, int h, int r, int g, int b);
+
+  /**
+   * This method uses a private void method to transform our representation of an animation into
+   * a representation that is compatible with the code given by our partners. It returns an
+   * ArrayList of Keyframes, which is how our customer defined their animation.
+   * @return an ArrayList representing an animation
+   */
+  ArrayList<Keyframe> getKeyframes();
 
 }
 

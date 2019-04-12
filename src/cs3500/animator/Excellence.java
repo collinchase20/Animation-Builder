@@ -8,8 +8,8 @@ import java.io.IOException;
 
 import cs3500.animator.controller.Controller;
 import cs3500.animator.controller.IController;
-import cs3500.animator.model.motion.IAnimator;
-import cs3500.animator.model.motion.IAnimatorImpl;
+import cs3500.animator.model.motion.AnimatorModel;
+import cs3500.animator.model.motion.AnimatorModelImpl;
 import cs3500.animator.util.AnimationReader;
 import cs3500.animator.view.EditView;
 import cs3500.animator.view.GraphicView;
@@ -63,7 +63,7 @@ public final class Excellence {
       e.printStackTrace();
     }
 
-    IAnimator a = AnimationReader.parseFile(f, new IAnimatorImpl.Builder());
+    AnimatorModel a = AnimationReader.parseFile(f, new AnimatorModelImpl.Builder());
     IView visual = ViewFactory.getView(viewType, a);
 
     StringBuilder output = new StringBuilder();

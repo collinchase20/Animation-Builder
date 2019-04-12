@@ -1,6 +1,6 @@
 package cs3500.animator.view;
 
-import cs3500.animator.model.motion.IAnimator;
+import cs3500.animator.model.motion.AnimatorModel;
 
 
 /**
@@ -13,7 +13,7 @@ public class ViewFactory {
    * The method getView parses a string and utilizes the different types of view created in IView to
    * return an object of that type.
    */
-  public static IView getView(String v, IAnimator a) {
+  public static IView getView(String v, AnimatorModel a) {
     if (v == null) {
       throw new IllegalArgumentException("Ask for a view!");
     }

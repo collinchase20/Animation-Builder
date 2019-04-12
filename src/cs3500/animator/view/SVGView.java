@@ -3,7 +3,7 @@ package cs3500.animator.view;
 import java.util.ArrayList;
 import java.util.Map;
 
-import cs3500.animator.model.motion.IAnimator;
+import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.model.shape.Shape;
 
@@ -14,7 +14,7 @@ import cs3500.animator.model.shape.Shape;
  */
 public class SVGView implements IView {
 
-  IAnimator model;
+  AnimatorModel model;
   int speed = 20;
 
   /**
@@ -23,7 +23,7 @@ public class SVGView implements IView {
    * @param model an instance of our model.
    */
 
-  public SVGView(IAnimator model) {
+  public SVGView(AnimatorModel model) {
     if (model == null) {
       throw new IllegalArgumentException("Model cannot be null");
     }

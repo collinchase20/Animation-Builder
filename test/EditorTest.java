@@ -1,7 +1,7 @@
 import org.junit.Test;
 
-import cs3500.animator.model.motion.IAnimator;
-import cs3500.animator.model.motion.IAnimatorImpl;
+import cs3500.animator.model.motion.AnimatorModel;
+import cs3500.animator.model.motion.AnimatorModelImpl;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.view.IView;
 import cs3500.animator.view.TView;
@@ -17,7 +17,7 @@ public class EditorTest {
   @Test
   public void testBasicRemoveKeyFrame() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
     testModel.addMotion(new Motion(0, 10, 10, 50, 50, 255, 0,
@@ -35,7 +35,7 @@ public class EditorTest {
 
   @Test
   public void testKeyFrameBeforeMotion() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
     testModel.addMotion(new Motion(10, 10, 10, 01, 01, 10, 0, 0,
@@ -52,7 +52,7 @@ public class EditorTest {
   @Test
   public void testAddNewKeyFrame() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
 
@@ -67,7 +67,7 @@ public class EditorTest {
   @Test
   public void testAddAndModifyNewKeyFrame() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
 
@@ -84,7 +84,7 @@ public class EditorTest {
   @Test
   public void testAddAndModifyMultipleKeyFrames() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
 
@@ -103,7 +103,7 @@ public class EditorTest {
   @Test
   public void testBasicAddKeyFrame() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
     testModel.addMotion(new Motion(0, 10, 10, 30, 30, 255, 0, 0, 40, 50, 50, 70, 70, 0, 0, 255),
@@ -118,7 +118,7 @@ public class EditorTest {
 
   @Test (expected = IllegalArgumentException.class)
   public void testRemoveKeyFrameInvalidName() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
     testModel.addMotion(new Motion(0, 10, 10, 50, 50, 255, 0,
@@ -134,7 +134,7 @@ public class EditorTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testRemoveKeyFrameInvalidTime() {
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
     testModel.addMotion(new Motion(0, 10, 10, 50, 50, 255, 0,
@@ -151,7 +151,7 @@ public class EditorTest {
   @Test(expected = IllegalArgumentException.class)
   public void testAddKeyFrameWhereThereAlreadyIsOne() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
 
@@ -164,7 +164,7 @@ public class EditorTest {
   @Test (expected = IllegalArgumentException.class)
   public void testAddKeyFrameInvalidName() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
 
@@ -176,7 +176,7 @@ public class EditorTest {
   @Test (expected = IllegalArgumentException.class)
   public void testModifyKeyFrameNonExistentShape() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
 
@@ -190,7 +190,7 @@ public class EditorTest {
   @Test (expected = IllegalArgumentException.class)
   public void testModifyKeyFrameNonExistentTime() {
 
-    IAnimator testModel = new IAnimatorImpl();
+    AnimatorModel testModel = new AnimatorModelImpl();
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
 
