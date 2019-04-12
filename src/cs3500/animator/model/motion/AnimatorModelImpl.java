@@ -54,6 +54,26 @@ public class AnimatorModelImpl implements AnimatorModel {
   }
 
   @Override
+  public Integer getWidth() {
+    return canvas[2];
+  }
+
+  @Override
+  public Integer getHeight() {
+    return canvas[3];
+  }
+
+  @Override
+  public Integer getLeftX() {
+    return canvas[0];
+  }
+
+  @Override
+  public Integer getTopY() {
+    return canvas[1];
+  }
+
+  @Override
   public void addShape(String name, String type) {
     if (!(type.equalsIgnoreCase("rectangle") || type.equalsIgnoreCase("ellipse"))) {
       throw new IllegalArgumentException("That type of shape does not exist, please" +

@@ -185,5 +185,13 @@ public interface AnimatorModel {
    */
   HashMap<String,String> getAllShapes();
 
+  Integer getWidth();
+
+  Integer getHeight();
+
+  Integer getLeftX();
+
+  Integer getTopY();
+
 }
 
