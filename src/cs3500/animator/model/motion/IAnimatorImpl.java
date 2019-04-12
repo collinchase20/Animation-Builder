@@ -317,6 +317,22 @@ public class IAnimatorImpl implements IAnimator {
   }
 
   @Override
+  public ArrayList<Keyframe> getKeyframes() {
+
+    for (Map.Entry<Shape, ArrayList<Motion>> entry : animation.entrySet()) {
+      Shape key = entry.getKey();
+      ArrayList<Motion> value = entry.getValue();
+      for (int i = 0; i < value.size(); i++) {
+        Motion m = value.get(i);
+        arrKeys.add(new Keyframe(m, key.getName()));
+      }
+    }
+
+    return arrKeys;
+
+  }
+
+  @Override
   public void setCanvas(int x, int y, int width, int height) {
     canvas[0] = x;
     canvas[1] = y;

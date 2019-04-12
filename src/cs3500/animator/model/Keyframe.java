@@ -10,7 +10,7 @@ public class Keyframe {
   //  this.m = m;
   //}
 
-  Keyframe(Motion m, String name) {
+  public Keyframe(Motion m, String name) {
     this.m = m;
   }
 
