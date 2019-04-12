@@ -183,7 +183,7 @@ public interface AnimatorModel {
   /**
    * TODO
    */
-  HashMap<String,Integer> getAllShapes();
+  HashMap<String,String> getAllShapes();
 
 }
 

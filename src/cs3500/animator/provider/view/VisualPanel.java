@@ -1,6 +1,8 @@
 package cs3500.animator.provider.view;
 
-import cs3500.animator.view.enhancedview.EnhancedVisualView;
+import cs3500.animator.model.Keyframe;
+import cs3500.animator.model.motion.AnimatorModel;
+import cs3500.animator.provider.view.enhancedview.EnhancedVisualView;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -11,8 +13,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import model.AnimatorModel;
-import model.Keyframe;
 
 /**
  * Defines a panel that will be drawn onto.

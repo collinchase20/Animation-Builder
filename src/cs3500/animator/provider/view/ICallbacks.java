@@ -1,6 +1,6 @@
-package controller;
+package cs3500.animator.provider.view;
 
-import model.Keyframe;
+import cs3500.animator.model.Keyframe;
 
 /**
  * Interface for Callbacks. Whenever the model is modified, these methods are called by the view.

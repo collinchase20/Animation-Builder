@@ -334,12 +334,12 @@ public class AnimatorModelImpl implements AnimatorModel {
   }
 
   @Override
-  public HashMap<String, Integer> getAllShapes() {
-    HashMap<String,Integer> temp = new HashMap<>();
+  public HashMap<String, String> getAllShapes() {
+    HashMap<String,String> temp = new HashMap<>();
 
     for (Map.Entry<Shape, ArrayList<Motion>> entry : animation.entrySet()) {
       Shape key = entry.getKey();
-      temp.put(key.getName(), 0);
+      temp.put(key.getName(), key.getType());
     }
     return temp;
   }

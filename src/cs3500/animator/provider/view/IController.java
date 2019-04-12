@@ -1,7 +1,6 @@
-package controller;
+package cs3500.animator.provider.view;
 
-import model.AnimatorModel;
-
+import cs3500.animator.model.motion.AnimatorModel;
 /**
  * Interface for the controller.
  */

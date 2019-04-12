@@ -1,8 +1,11 @@
 package cs3500.animator.provider.view;
 
-import controller.Controller;
+
 import java.util.function.Consumer;
-import model.AnimatorModel;
+
+import cs3500.animator.controller.Controller;
+import cs3500.animator.model.motion.AnimatorModel;
+
 
 /**
  * Interface for views.
