@@ -11,6 +11,7 @@ import cs3500.animator.controller.IController;
 import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.AnimatorModelImpl;
 import cs3500.animator.provider.view.AbstractViewClass;
+import cs3500.animator.provider.view.AddModelToView;
 import cs3500.animator.provider.view.VisualPanel;
 import cs3500.animator.provider.view.VisualView;
 import cs3500.animator.util.AnimationReader;
@@ -112,11 +113,9 @@ public final class Excellence {
         controller.beginController();
         break;
       case "provider":
-        AbstractViewClass abs = new VisualView(20);
-        VisualView v = new VisualView(20);
-        //System.out.print("hits1");
-        //VisualPanel v = new VisualPanel(a,60);
-        //System.out.print("hits2");
+        //VisualPanel v = new VisualPanel(a,20);
+        AbstractViewClass abs = new VisualView(a,20);
+        abs.makeVisible();
         break;
       default:
         throw new IllegalArgumentException("Invalid view type");
