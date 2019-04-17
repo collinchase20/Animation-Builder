@@ -2,7 +2,8 @@ package cs3500.animator.view;
 
 import java.awt.Component;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  * Interface used to hold the methods used on our EditView. These

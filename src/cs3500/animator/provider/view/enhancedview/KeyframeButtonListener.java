@@ -15,7 +15,6 @@ import cs3500.animator.model.Keyframe;
 public class KeyframeButtonListener implements ActionListener {
 
   private EnhancedVisualView v;
-  private boolean canAdd = true;
   private TextArea t;
   private JFrame window;
   private Map<String, Double> params = new HashMap<>();
@@ -35,6 +34,8 @@ public class KeyframeButtonListener implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
+
+    boolean canAdd = true;
 
     String name = "";
     params.put("t1", 0.0);

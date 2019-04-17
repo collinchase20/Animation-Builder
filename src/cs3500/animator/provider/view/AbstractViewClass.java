@@ -2,7 +2,6 @@ package cs3500.animator.provider.view;
 
 import java.awt.Dimension;
 import java.util.function.Consumer;
-import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 

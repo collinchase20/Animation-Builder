@@ -72,7 +72,7 @@ public class EnhancedVisualView extends JFrame implements IView, ActionListener 
           File file = fc.getSelectedFile();
           try {
             new AnimationReader().parseFile(new FileReader(file), new AnimatorModelImpl.Builder());
-          } catch (IOException ioe){
+          } catch (IOException ioe) {
             ioe.printStackTrace();
           }
         }

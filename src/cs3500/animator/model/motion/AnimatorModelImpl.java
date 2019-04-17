@@ -20,6 +20,10 @@ public class AnimatorModelImpl implements AnimatorModel {
   private IAnimator model;
 
 
+  /**
+   * Constructor for our providers model.
+   * @param m an instance of the model.
+   */
   public AnimatorModelImpl(IAnimator m) {
     this.model = m;
     this.animation = model.sendAnimation();
@@ -108,6 +112,9 @@ public class AnimatorModelImpl implements AnimatorModel {
   }
 
   // Needed to compile in order to work with partners code, since they implemented the extra credit
+  /**
+   * A Builder class needed here in order for the code to compile.
+   */
   public final static class Builder implements AnimationBuilder<AnimatorModelImpl> {
     @Override
     public AnimatorModelImpl build() {

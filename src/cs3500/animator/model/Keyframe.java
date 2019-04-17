@@ -2,6 +2,10 @@ package cs3500.animator.model;
 
 import cs3500.animator.model.motion.Motion;
 
+/**
+ * Class to represent a keyframe. We designed this class based on how
+ * our providers interpreted what a keyframe was.
+ */
 public class Keyframe {
   Motion m;
   String name;

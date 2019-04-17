@@ -1,8 +1,9 @@
 package cs3500.animator.controller;
 
-import java.awt.*;
+import java.awt.Color;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 import cs3500.animator.model.Keyframe;
 import cs3500.animator.model.motion.AnimatorModel;
@@ -52,7 +53,8 @@ public class Controller extends JFrame implements IController {
     eView.sendSlowDown().addActionListener(e -> eView.downSpeed());
     eView.sendAddShape().addActionListener(e -> model.addShape(eView.sendShapeName().getText(),
             eView.sendShapeType().getText()));
-    eView.sendRemoveShape().addActionListener(e -> model.removeShape(eView.sendShapeTypeRemove().getText()));
+    eView.sendRemoveShape().addActionListener(e ->
+            model.removeShape(eView.sendShapeTypeRemove().getText()));
 
 
     eView.sendKeyFrameButtonR().addActionListener(e -> {

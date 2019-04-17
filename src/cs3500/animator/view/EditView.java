@@ -1,8 +1,15 @@
 package cs3500.animator.view;
 
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Component;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.BoxLayout;
 
 /**
  * Our EditView interface. Converts our visual animation into a visual animation that is able to be
