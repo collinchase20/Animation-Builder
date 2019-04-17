@@ -72,6 +72,7 @@ public class VisualPanel extends JPanel implements ActionListener {
             g2d.fillOval((int) k.getX1(), (int) k.getY1(), (int) k.getW1(), (int) k.getH1());
           }
         } catch (NullPointerException npe) {
+          System.out.println(k.getName());
           System.out.println("Item has been deleted");
           return;
         }

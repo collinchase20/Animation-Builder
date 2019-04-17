@@ -1,8 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import cs3500.animator.model.motion.AnimatorModel;
-import cs3500.animator.model.motion.AnimatorModelImpl;
+import cs3500.animator.model.motion.IAnimator;
+import cs3500.animator.model.motion.IAnimatorImpl;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.view.IView;
 import cs3500.animator.view.SVGView;
@@ -17,7 +17,7 @@ public class SVGViewTest {
 
   @Test
   public void SVGViewRectangles() {
-    AnimatorModel testModel = new AnimatorModelImpl();
+    IAnimator testModel = new IAnimatorImpl();
 
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("R", "rectangle");
@@ -73,7 +73,7 @@ public class SVGViewTest {
 
   @Test
   public void SVGViewEllipses() {
-    AnimatorModel testModel = new AnimatorModelImpl();
+    IAnimator testModel = new IAnimatorImpl();
 
     testModel.setCanvas(50, 50, 360, 360);
     testModel.addShape("E", "ellipse");
@@ -129,7 +129,7 @@ public class SVGViewTest {
 
   @Test
   public void SVGTestEllipsesandRectangles() {
-    AnimatorModel testModel = new AnimatorModelImpl();
+    IAnimator testModel = new IAnimatorImpl();
 
     IView textualView = new SVGView(testModel);
 
@@ -211,7 +211,7 @@ public class SVGViewTest {
 
   @Test
   public void removeShapeTestSVG() {
-    AnimatorModel testModel = new AnimatorModelImpl();
+    IAnimator testModel = new IAnimatorImpl();
 
     IView textualView = new SVGView(testModel);
 
@@ -269,7 +269,7 @@ public class SVGViewTest {
 
   @Test
   public void removeMotionTestSVG() {
-    AnimatorModel testModel = new AnimatorModelImpl();
+    IAnimator testModel = new IAnimatorImpl();
 
     IView textualView = new SVGView(testModel);
 
@@ -338,7 +338,7 @@ public class SVGViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void removeMotionTestSVGExceptionNoMoreMotionsInElipse() {
-    AnimatorModel testModel = new AnimatorModelImpl();
+    IAnimator testModel = new IAnimatorImpl();
 
     IView textualView = new SVGView(testModel);
 
@@ -362,7 +362,7 @@ public class SVGViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void NotInitalizingCanvasBeforeTryingtoDisplayView() {
-    AnimatorModel testModel = new AnimatorModelImpl();
+    IAnimator testModel = new IAnimatorImpl();
 
     IView textualView = new SVGView(testModel);
 
@@ -378,7 +378,7 @@ public class SVGViewTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void nullModelTest() {
-    AnimatorModel testModel = null;
+    IAnimator testModel = null;
     IView view = new SVGView(testModel);
   }
 }

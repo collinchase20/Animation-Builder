@@ -6,10 +6,6 @@ public class Keyframe {
   Motion m;
   String name;
 
-  //Keyframe(Motion m) {
-  //  this.m = m;
-  //}
-
 
   /**
    * Constructor for a motion represented as a keyframe.
@@ -51,6 +47,7 @@ public class Keyframe {
 
   public Keyframe(Motion m, String name) {
     this.m = m;
+    this.name = name;
   }
 
   public double getT1() {

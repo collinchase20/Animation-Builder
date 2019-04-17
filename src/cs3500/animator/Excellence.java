@@ -10,6 +10,8 @@ import cs3500.animator.controller.Controller;
 import cs3500.animator.controller.IController;
 import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.AnimatorModelImpl;
+import cs3500.animator.model.motion.IAnimator;
+import cs3500.animator.model.motion.IAnimatorImpl;
 import cs3500.animator.provider.view.AbstractViewClass;
 import cs3500.animator.provider.view.AddModelToView;
 import cs3500.animator.provider.view.VisualPanel;
@@ -67,8 +69,10 @@ public final class Excellence {
       e.printStackTrace();
     }
 
-    AnimatorModel a = AnimationReader.parseFile(f, new AnimatorModelImpl.Builder());
-    IView visual = ViewFactory.getView(viewType, a);
+    IAnimator model = AnimationReader.parseFile(f, new IAnimatorImpl.Builder());
+    IView visual = ViewFactory.getView(viewType, model);
+    AnimatorModel adapter = new AnimatorModelImpl(model);
+
 
     StringBuilder output = new StringBuilder();
     if (viewType.equalsIgnoreCase("SVG") || viewType.equalsIgnoreCase("TEXT")) {
@@ -109,13 +113,16 @@ public final class Excellence {
         else {
           throw new IllegalArgumentException("Can't edit a non-visual view");
         }
-        IController controller = new Controller(editor,a);
+        IController controller = new Controller(editor,adapter,model);
         controller.beginController();
         break;
       case "provider":
-        //VisualPanel v = new VisualPanel(a,20);
-        AbstractViewClass abs = new VisualView(a,20);
-        abs.makeVisible();
+        AbstractViewClass abs = new AbstractViewClass();
+        //abs = new AddModelToView(adapter,20);
+        //abs = new VisualView(20);
+        VisualPanel v = new VisualPanel(adapter,20);
+        //AbstractViewClass abs = new VisualView(a,20);
+        //abs.makeVisible();
         break;
       default:
         throw new IllegalArgumentException("Invalid view type");

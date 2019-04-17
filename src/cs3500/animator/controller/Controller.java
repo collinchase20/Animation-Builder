@@ -1,12 +1,10 @@
 package cs3500.animator.controller;
 
-
 import java.awt.*;
-
 import javax.swing.*;
-
 import cs3500.animator.model.Keyframe;
 import cs3500.animator.model.motion.AnimatorModel;
+import cs3500.animator.model.motion.IAnimator;
 import cs3500.animator.view.IEditor;
 
 /**
@@ -18,18 +16,21 @@ public class Controller extends JFrame implements IController {
 
   private IEditor eView;
   private boolean switchBool = true;
-  private AnimatorModel a;
+  private IAnimator model;
+  private AnimatorModel adapt;
+
 
   /**
    * Constructor for a controller.
    *
    * @param eView an Instance of our EditView
-   * @param a     an Instance of our model
+   * @param adapt a new instance of our model using the adapter pattern
    */
 
-  public Controller(IEditor eView, AnimatorModel a) {
+  public Controller(IEditor eView, AnimatorModel adapt, IAnimator model) {
     this.eView = eView;
-    this.a = a;
+    this.model = model;
+    this.adapt = adapt;
     this.beginController();
   }
 
@@ -42,14 +43,14 @@ public class Controller extends JFrame implements IController {
     eView.sendLoop().addActionListener(e -> this.switchColor(eView.sendLoop()));
     eView.sendSpeedUp().addActionListener(e -> eView.upSpeed());
     eView.sendSlowDown().addActionListener(e -> eView.downSpeed());
-    eView.sendAddShape().addActionListener(e -> a.addShape(eView.sendShapeName().getText(),
+    eView.sendAddShape().addActionListener(e -> model.addShape(eView.sendShapeName().getText(),
             eView.sendShapeType().getText()));
-    eView.sendRemoveShape().addActionListener(e -> a.removeShape(eView.sendShapeTypeRemove().getText()));
+    eView.sendRemoveShape().addActionListener(e -> model.removeShape(eView.sendShapeTypeRemove().getText()));
 
 
     eView.sendKeyFrameButtonR().addActionListener(e -> {
       if (eView.sendKeyFrameFieldR().getText().split(" ").length == 9) {
-        a.removeKeyFrame(eView.sendKeyFrameFieldR().getText().split(" ")[0],
+        model.removeKeyFrame(eView.sendKeyFrameFieldR().getText().split(" ")[0],
                 Integer.parseInt(eView.sendKeyFrameFieldR().getText().split(" ")[1]),
                 Integer.parseInt(eView.sendKeyFrameFieldR().getText().split(" ")[2]),
                 Integer.parseInt(eView.sendKeyFrameFieldR().getText().split(" ")[3]),
@@ -64,12 +65,13 @@ public class Controller extends JFrame implements IController {
     });
 
 
-    eView.sendKeyBA().addActionListener(e -> a.addKeyFrame(eView.sendKeyTLA().getText().split(" ")[0],
+    eView.sendKeyBA().addActionListener(e -> model.addKeyFrame(eView.sendKeyTLA().getText().split(
+            " ")[0],
             Integer.parseInt(eView.sendKeyTLA().getText().split(" ")[1])));
 
     eView.sendKeyBM().addActionListener(e -> {
       if (eView.sendKeyTLM().getText().split(" ").length == 9) {
-        a.modifyKeyFrame(eView.sendKeyTLM().getText().split(" ")[0],
+        model.modifyKeyFrame(eView.sendKeyTLM().getText().split(" ")[0],
                 Integer.parseInt(eView.sendKeyTLM().getText().split(" ")[1]),
                 Integer.parseInt(eView.sendKeyTLM().getText().split(" ")[2]),
                 Integer.parseInt(eView.sendKeyTLM().getText().split(" ")[3]),
@@ -90,37 +92,37 @@ public class Controller extends JFrame implements IController {
 
   @Override
   public AnimatorModel getModel() {
-    return this.a;
+    return this.adapt;
   }
 
 
   @Override
   public void addShape(String name, String type) {
-    a.addShape(name, type);
+    model.addShape(name, type);
   }
 
   @Override
   public void removeShape(String name) {
-    a.removeShape(name);
+    model.removeShape(name);
   }
 
   @Override
   public void editKeyframe(Keyframe k, Double t1, Double x1, Double y1, Double w1, Double h1,
                            Double r1, Double g1, Double b1, Double t2, Double x2, Double y2,
                            Double w2, Double h2, Double r2, Double g2, Double b2) {
-    a.modifyKeyFrame(k.getName(), (int) k.getT1(), (int) k.getX1(), (int) k.getY1(),
+    model.modifyKeyFrame(k.getName(), (int) k.getT1(), (int) k.getX1(), (int) k.getY1(),
             (int) k.getW1(), (int) k.getH1(), (int) k.getR1(), (int) k.getG1(), (int) k.getB1());
 
   }
 
   @Override
   public void addKeyframe(Keyframe kf) {
-    a.addKeyFrame(kf.getName(), (int) kf.getT1());
+    model.addKeyFrame(kf.getName(), (int) kf.getT1());
   }
 
   @Override
   public void deleteKeyframe(Keyframe k) {
-    a.removeKeyFrame(k.getName(), (int) k.getT1(), (int) k.getX1(), (int) k.getY1(),
+    model.removeKeyFrame(k.getName(), (int) k.getT1(), (int) k.getX1(), (int) k.getY1(),
             (int) k.getW1(), (int) k.getH1(), (int) k.getR1(), (int) k.getG1(), (int) k.getB1());
   }
 

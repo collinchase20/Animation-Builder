@@ -1,6 +1,7 @@
 package cs3500.animator.view;
 
 import cs3500.animator.model.motion.AnimatorModel;
+import cs3500.animator.model.motion.IAnimator;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.model.shape.Shape;
 
@@ -11,14 +12,14 @@ import cs3500.animator.model.shape.Shape;
  */
 public class TView implements IView {
 
-  private AnimatorModel model;
+  private IAnimator model;
 
   /**
    * Constructor for a textual view of an animation.
    *
    * @param model an instance of our model representing an animation.
    */
-  public TView(AnimatorModel model) {
+  public TView(IAnimator model) {
     if (model == null) {
       throw new IllegalArgumentException("Model cannot be null");
     }
