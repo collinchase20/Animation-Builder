@@ -20,9 +20,9 @@ public class VisualView extends AbstractViewClass implements IView {
    *
    * @param speed is the speed in ticks/sec that this animation will play at
    */
-  public VisualView(int speed) {
+  public VisualView(AnimatorModel a, int speed) {
     super();
-    //super.m = a; //TODO remove this, and change VisualView constructor
+    super.m = a; //TODO remove this, and change VisualView constructor
     if (speed <= 0) {
       throw new IllegalArgumentException();
     }

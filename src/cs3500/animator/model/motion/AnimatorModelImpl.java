@@ -103,6 +103,7 @@ public class AnimatorModelImpl implements AnimatorModel {
     return model.returnHighestTick();
   }
 
+  // Needed to compile in order to work with partners code, since they implemented the extra credit
   public final static class Builder implements AnimationBuilder<AnimatorModelImpl> {
     @Override
     public AnimatorModelImpl build() {
