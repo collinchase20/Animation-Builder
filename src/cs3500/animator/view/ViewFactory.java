@@ -27,6 +27,8 @@ public class ViewFactory {
       return new TView(a);
     } else if (v.equalsIgnoreCase("VISUAL") || v.equalsIgnoreCase("EDIT")) {
       return new GraphicView(a);
+    } else if (v.equalsIgnoreCase("PROVIDER") || v.equalsIgnoreCase("EDIT")) {
+      return new GraphicView(a);
     } else {
       throw new IllegalArgumentException("You must have made a spelling error-- invalid input");
     }

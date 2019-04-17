@@ -21,7 +21,7 @@ public class AnimatorModelImpl implements AnimatorModel {
   // an array of integers to represent the canvas
   // index key: 0=x, 1=y, 2=width, 3=height
   private int[] canvas = new int[4];
-  private ArrayList<Keyframe> arrKeys;
+  private ArrayList<Keyframe> arrKeys = new ArrayList<>();
 
 
   public AnimatorModelImpl() {
@@ -408,6 +408,11 @@ public class AnimatorModelImpl implements AnimatorModel {
       }
     }
     return accum;
+  }
+
+  @Override
+  public ArrayList<Keyframe> interpolate(double tick) {
+    return arrKeys;
   }
 
   /**

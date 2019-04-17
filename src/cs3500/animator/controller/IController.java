@@ -1,6 +1,7 @@
 package cs3500.animator.controller;
 
 
+import cs3500.animator.model.Keyframe;
 import cs3500.animator.model.motion.AnimatorModel;
 
 /**
@@ -22,7 +23,13 @@ public interface IController {
 
   AnimatorModel getModel();
 
-  void editKeyframe();
-
   void addShape(String name, String type);
+  
+  void removeShape(String name);
+
+  void editKeyframe(Keyframe k, Double t1, Double x1, Double y1, Double w1, Double h1, Double r1, Double g1, Double b1, Double t2, Double x2, Double y2, Double w2, Double h2, Double r2, Double g2, Double b2);
+
+  void addKeyframe(Keyframe kf);
+
+  void deleteKeyframe(Keyframe k);
 }

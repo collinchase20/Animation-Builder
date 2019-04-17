@@ -193,5 +193,6 @@ public interface AnimatorModel {
 
   Integer getTopY();
 
+  ArrayList<Keyframe> interpolate(double tick);
 }
 
