@@ -188,11 +188,11 @@ public class IAnimatorImpl implements IAnimator {
           }
 
           if (m.getT1() > time && i == 0) {
-            Motion temp = new Motion(time,0,0,0,
-                    0,0,0,0,m.getT1(),m.getX1(),m.getY2(),m.getW2(),
+            Motion temp = new Motion(time, 0, 0, 0,
+                    0, 0, 0, 0, m.getT1(), m.getX1(), m.getY2(), m.getW2(),
                     m.getH2(),
-                    m.getR2(),m.getG2(),m.getB2());
-            value.add(i,temp);
+                    m.getR2(), m.getG2(), m.getB2());
+            value.add(i, temp);
           }
           if (m.getT1() < time && m.getT2() > time) {
             int x2 = this.tween(time, m.getX1(), m.getX2(), m.getT1(), m.getT2());

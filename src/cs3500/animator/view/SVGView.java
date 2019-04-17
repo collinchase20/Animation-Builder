@@ -3,7 +3,6 @@ package cs3500.animator.view;
 import java.util.ArrayList;
 import java.util.Map;
 
-import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.IAnimator;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.model.shape.Shape;

@@ -1,7 +1,9 @@
 package cs3500.animator.controller;
 
 import java.awt.*;
+
 import javax.swing.*;
+
 import cs3500.animator.model.Keyframe;
 import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.IAnimator;

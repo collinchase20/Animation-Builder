@@ -93,7 +93,8 @@ public class AnimatorModelImpl implements AnimatorModel {
         int g = model.tween((int) tick, (int) k.getG1(), (int) k.getG2(), t1, t2);
         int b = model.tween((int) tick, (int) k.getB1(), (int) k.getB2(), t1, t2);
 
-        Keyframe newFrame = new Keyframe(new Motion((int) tick, x, y, h, w, r, g, b, (int) tick, x, y, h, w, r,
+        Keyframe newFrame = new Keyframe(new Motion((int) tick, x, y, h, w, r, g, b, (int) tick,
+                x, y, h, w, r,
                 g, b), k.getName());
         newKeys.add(newFrame);
       }
@@ -132,7 +133,8 @@ public class AnimatorModelImpl implements AnimatorModel {
     }
 
     @Override
-    public AnimationBuilder<AnimatorModelImpl> addKeyframe(String name, int t, int x, int y, int w, int h, int r, int g, int b) {
+    public AnimationBuilder<AnimatorModelImpl> addKeyframe(String name, int t, int x, int y,
+                                                           int w, int h, int r, int g, int b) {
       return null;
     }
   }

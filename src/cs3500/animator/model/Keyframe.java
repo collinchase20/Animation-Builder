@@ -29,8 +29,8 @@ public class Keyframe {
    */
 
   public Keyframe(String name, double t1, double x1, double y1, double w1,
-                double h1, double r1, double g1, double b1, double t2, double x2,
-                double y2, double w2, double h2, double r2, double g2, double b2) {
+                  double h1, double r1, double g1, double b1, double t2, double x2,
+                  double y2, double w2, double h2, double r2, double g2, double b2) {
     if (t2 < t1) {
       throw new IllegalArgumentException("End time must be later than or equal to the starting " +
               "time");
@@ -114,6 +114,8 @@ public class Keyframe {
     return m.getB2();
   }
 
-  public String getName() {return name;}
+  public String getName() {
+    return name;
+  }
 
 }

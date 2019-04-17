@@ -1,20 +1,15 @@
 package cs3500.animator.view;
 
 
+import java.awt.*;
 import javax.swing.*;
 
-import java.awt.*;
-
-import cs3500.animator.controller.Controller;
-
 /**
- * Our EditView interface. Converts our visual animation into a visual animation that
- * is able to be used with a controller for editing the animation functionality.
+ * Our EditView interface. Converts our visual animation into a visual animation that is able to be
+ * used with a controller for editing the animation functionality.
  */
 public class EditView extends JFrame implements IEditor {
 
-  private GraphicView visualView;
-  private JFrame frame = new JFrame();
   JButton play;
   JButton restart;
   JButton loop;
@@ -31,11 +26,13 @@ public class EditView extends JFrame implements IEditor {
   JTextField keyFrameFieldR;
   JTextField keyTLA;
   JTextField keyTLM;
-
+  private GraphicView visualView;
+  private JFrame frame = new JFrame();
 
 
   /**
    * Constructor for a EditView.
+   *
    * @param v an instance of our GraphicView
    */
 
@@ -121,82 +118,82 @@ public class EditView extends JFrame implements IEditor {
   }
 
   @Override
-  public JButton sendPlay(){
+  public JButton sendPlay() {
     return this.play;
   }
 
   @Override
-  public JButton sendRestart(){
+  public JButton sendRestart() {
     return this.restart;
   }
 
   @Override
-  public JButton sendLoop(){
+  public JButton sendLoop() {
     return this.loop;
   }
 
   @Override
-  public JButton sendSlowDown(){
+  public JButton sendSlowDown() {
     return this.slowDown;
   }
 
   @Override
-  public JButton sendSpeedUp(){
+  public JButton sendSpeedUp() {
     return this.speedUp;
   }
 
   @Override
-  public JButton sendAddShape(){
+  public JButton sendAddShape() {
     return this.addShape;
   }
 
   @Override
-  public JButton sendRemoveShape(){
+  public JButton sendRemoveShape() {
     return this.removeShape;
   }
 
   @Override
-  public JButton sendKeyFrameButtonR(){
+  public JButton sendKeyFrameButtonR() {
     return this.keyFrameButtonR;
   }
 
   @Override
-  public JButton sendKeyBA(){
+  public JButton sendKeyBA() {
     return this.keyBA;
   }
 
   @Override
-  public JButton sendKeyBM(){
+  public JButton sendKeyBM() {
     return this.keyBM;
   }
 
   @Override
-  public JTextField sendShapeName(){
+  public JTextField sendShapeName() {
     return this.shapeName;
   }
 
   @Override
-  public JTextField sendShapeType(){
+  public JTextField sendShapeType() {
     return this.shapeType;
   }
 
   @Override
-  public JTextField sendShapeTypeRemove(){
+  public JTextField sendShapeTypeRemove() {
     return this.shapeTypeRemove;
   }
 
   @Override
-  public JTextField sendKeyFrameFieldR(){
+  public JTextField sendKeyFrameFieldR() {
     return this.keyFrameFieldR;
   }
 
   @Override
-  public JTextField sendKeyTLM(){
+  public JTextField sendKeyTLM() {
     return this.keyTLM;
   }
 
   @Override
-  public JTextField sendKeyTLA(){
+  public JTextField sendKeyTLA() {
     return this.keyTLA;
   }
 

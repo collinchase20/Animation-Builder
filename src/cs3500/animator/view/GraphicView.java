@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.IAnimator;
 import cs3500.animator.model.motion.Motion;
 import cs3500.animator.model.shape.Shape;
