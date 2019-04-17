@@ -15,7 +15,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.function.Consumer;
-import javax.print.Doc;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -26,11 +25,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.AnimatorModelImpl;
-import cs3500.animator.model.Keyframe;
 
 /**
  * Represents an enhanced visual view that allows for manipulation of the animation playback.

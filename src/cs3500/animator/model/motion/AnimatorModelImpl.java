@@ -1,9 +1,7 @@
 package cs3500.animator.model.motion;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 import cs3500.animator.model.Keyframe;
