@@ -12,12 +12,6 @@ import cs3500.animator.model.motion.AnimatorModel;
 import cs3500.animator.model.motion.AnimatorModelImpl;
 import cs3500.animator.model.motion.IAnimator;
 import cs3500.animator.model.motion.IAnimatorImpl;
-import cs3500.animator.model.motion.IAnimator;
-import cs3500.animator.model.motion.IAnimatorImpl;
-import cs3500.animator.provider.view.AbstractViewClass;
-import cs3500.animator.provider.view.AddModelToView;
-import cs3500.animator.provider.view.VisualPanel;
-import cs3500.animator.provider.view.VisualView;
 import cs3500.animator.provider.view.enhancedview.EnhancedVisualView;
 import cs3500.animator.util.AnimationReader;
 import cs3500.animator.view.EditView;
@@ -120,13 +114,9 @@ public final class Excellence {
         controller.beginController();
         break;
       case "provider":
-        //AbstractViewClass abs = new AbstractViewClass();
-        //abs = new AddModelToView(adapter,20);
-        //abs = new VisualView(20);
-        VisualPanel v = new VisualPanel(adapter,20);
-        //abs = new VisualView(adapter,20);
-        //abs.makeVisible();
-        //abs.makeVisible();
+        Controller pControls = new Controller(adapter,model);
+        EnhancedVisualView pEdit = new EnhancedVisualView();
+        pEdit.addController(pControls);
         break;
       default:
         throw new IllegalArgumentException("Invalid view type");

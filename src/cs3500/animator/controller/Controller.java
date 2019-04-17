@@ -34,6 +34,11 @@ public class Controller extends JFrame implements IController {
     this.beginController();
   }
 
+  public Controller(AnimatorModel adapt, IAnimator model) {
+    this.model = model;
+    this.adapt = adapt;
+  }
+
   @Override
   public void beginController() {
 

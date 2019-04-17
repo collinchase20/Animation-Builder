@@ -25,7 +25,7 @@ public class AnimatorModelImpl implements AnimatorModel {
   public AnimatorModelImpl(IAnimator m) {
     this.model = m;
     this.animation = model.sendAnimation();
-    arrKeys = this.getKeyframes();
+    arrKeys = this.createKeyframes();
   }
 
   @Override
@@ -50,6 +50,10 @@ public class AnimatorModelImpl implements AnimatorModel {
 
   @Override
   public ArrayList<Keyframe> getKeyframes() {
+    return arrKeys;
+  }
+
+  private ArrayList<Keyframe> createKeyframes() {
 
     for (Map.Entry<Shape, ArrayList<Motion>> entry : animation.entrySet()) {
       Shape key = entry.getKey();
@@ -61,6 +65,7 @@ public class AnimatorModelImpl implements AnimatorModel {
     }
     return arrKeys;
   }
+
 
   @Override
   public HashMap<String, String> getAllShapes() {
